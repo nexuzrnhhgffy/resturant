@@ -18,15 +18,15 @@ public class PosTransaction : BaseEntity
     [MultilingualName("مبلغ", "المبلغ")]
     public decimal Amount { get; set; }
     [MultilingualName("شماره کارت ماسکه", "رقم البطاقة المقنع")]
-    public string CardNumberMasked { get; set; }
+    public string? CardNumberMasked { get; set; }
     [MultilingualName("شماره پیگیری", "رقم التتبع")]
-    public string TraceNumber { get; set; }
+    public string? TraceNumber { get; set; }
     [MultilingualName("شماره مرجع", "رقم المرجع")]
-    public string ReferenceNumber { get; set; }
+    public string? ReferenceNumber { get; set; }
     [MultilingualName("تاریخ تراکنش", "تاريخ المعاملة")]
     public DateTime TransactionDate { get; set; }
     [MultilingualName("کد پاسخ", "رمز الاستجابة")]
-    public string ResponseCode { get; set; }
+    public string? ResponseCode { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
 }

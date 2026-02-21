@@ -12,9 +12,9 @@ public class Permission : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long PermissionId { get; set; }
     [MultilingualName("کد دسترسی", "رمز الإذن")]
-    public string PermissionCode { get; set; }
+    public string? PermissionCode { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("دسته بندی", "الفئة")]
-    public string Category { get; set; }
+    public string? Category { get; set; }
 }

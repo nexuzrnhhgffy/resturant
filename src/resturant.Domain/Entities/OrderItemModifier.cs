@@ -10,7 +10,7 @@ namespace resturant.Domain.Entities;
 public class OrderItemModifier : BaseEntity
 {
     [MultilingualName("شناسه", "المعرف")]
-    public long Id { get; set; }
+    public new long Id { get; set; }
     [MultilingualName("شناسه آیتم سفارش", "معرف عنصر الطلب")]
     public long OrderItemId { get; set; }
     [MultilingualName("شناسه افزودنی", "معرف المعدل")]

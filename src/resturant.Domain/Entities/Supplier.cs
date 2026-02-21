@@ -12,19 +12,19 @@ public class Supplier : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long SupplierId { get; set; }
     [MultilingualName("نام تامین کننده", "اسم المورد")]
-    public string SupplierName { get; set; }
+    public string? SupplierName { get; set; }
     [MultilingualName("شخص تماس", "شخص الاتصال")]
-    public string ContactPerson { get; set; }
+    public string? ContactPerson { get; set; }
     [MultilingualName("تلفن", "رقم الهاتف")]
-    public string Phone { get; set; }
+    public string? Phone { get; set; }
     [MultilingualName("ایمیل", "البريد الإلكتروني")]
-    public string Email { get; set; }
+    public string? Email { get; set; }
     [MultilingualName("آدرس", "العنوان")]
-    public string Address { get; set; }
+    public string? Address { get; set; }
     [MultilingualName("کالاهای تامین شده", "العناصر الموردة")]
-    public string SupplyItems { get; set; }
+    public string? SupplyItems { get; set; }
     [MultilingualName("شرایط پرداخت", "شروط الدفع")]
-    public string PaymentTerms { get; set; }
+    public string? PaymentTerms { get; set; }
     [MultilingualName("امتیاز", "التقييم")]
     public int Rating { get; set; }
     [MultilingualName("فعال", "نشط")]

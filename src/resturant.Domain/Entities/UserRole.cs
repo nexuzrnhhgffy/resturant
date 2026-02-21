@@ -10,9 +10,9 @@ namespace resturant.Domain.Entities;
 public class UserRole : BaseEntity
 {
     [MultilingualName("شناسه", "المعرف")]
-    public long Id { get; set; }
+    public new long Id { get; set; }
     [MultilingualName("نوع کاربر", "نوع المستخدم")]
-    public string UserType { get; set; }
+    public string? UserType { get; set; }
     [MultilingualName("شناسه کاربر", "معرف المستخدم")]
     public long UserId { get; set; }
     [MultilingualName("شناسه نقش", "معرف الدور")]

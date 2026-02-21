@@ -22,5 +22,5 @@ public class Shift : BaseEntity
     [MultilingualName("پایان", "وقت النهاية")]
     public TimeSpan EndTime { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
 }

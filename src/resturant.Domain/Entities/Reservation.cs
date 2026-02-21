@@ -24,13 +24,13 @@ public class Reservation : BaseEntity
     [MultilingualName("تعداد نفرات", "عدد الأشخاص")]
     public int PartySize { get; set; }
     [MultilingualName("نوع رزرو", "نوع الحجز")]
-    public string ReservationType { get; set; }
+    public string? ReservationType { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
     [MultilingualName("درخواست خاص", "طلبات خاصة")]
-    public string SpecialRequests { get; set; }
+    public string? SpecialRequests { get; set; }
     [MultilingualName("دلیل کنسل", "سبب الإلغاء")]
-    public string CancellationReason { get; set; }
+    public string? CancellationReason { get; set; }
     [MultilingualName("تایید کننده", "تم التأكيد بواسطة")]
     public long? ConfirmedBy { get; set; }
 }

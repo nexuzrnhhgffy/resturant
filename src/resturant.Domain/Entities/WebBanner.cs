@@ -12,13 +12,13 @@ public class WebBanner : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long BannerId { get; set; }
     [MultilingualName("عنوان", "العنوان")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
     [MultilingualName("تصویر", "الصورة")]
-    public string ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
     [MultilingualName("لینک", "الرابط")]
-    public string LinkUrl { get; set; }
+    public string? LinkUrl { get; set; }
     [MultilingualName("موقعیت", "الموقع")]
-    public string Position { get; set; }
+    public string? Position { get; set; }
     [MultilingualName("ترتیب نمایش", "ترتيب العرض")]
     public int DisplayOrder { get; set; }
     [MultilingualName("فعال", "نشط")]

@@ -22,9 +22,9 @@ public class OrderItem : BaseEntity
     [MultilingualName("جمع فرعی", "المجموع الفرعي")]
     public decimal Subtotal { get; set; }
     [MultilingualName("دستور پخت خاص", "تعليمات خاصة")]
-    public string SpecialInstructions { get; set; }
+    public string? SpecialInstructions { get; set; }
     [MultilingualName("وضعیت آیتم", "حالة العنصر")]
-    public string ItemStatus { get; set; }
+    public string? ItemStatus { get; set; }
     [MultilingualName("شروع آماده سازی", "بداية التحضير")]
     public DateTime? PreparationStartTime { get; set; }
     [MultilingualName("پایان آماده سازی", "نهاية التحضير")]

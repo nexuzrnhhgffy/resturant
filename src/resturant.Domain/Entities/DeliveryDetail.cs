@@ -16,7 +16,7 @@ public class DeliveryDetail : BaseEntity
     [MultilingualName("شناسه راننده", "معرف السائق")]
     public long? DriverId { get; set; }
     [MultilingualName("وضعیت تحویل", "حالة التوصيل")]
-    public string DeliveryStatus { get; set; }
+    public string? DeliveryStatus { get; set; }
     [MultilingualName("هزینه پیک", "رسوم التوصيل")]
     public decimal DeliveryFee { get; set; }
     [MultilingualName("زمان تخمینی", "وقت التسليم المقدر")]

@@ -10,7 +10,7 @@ namespace resturant.Domain.Entities;
 public class RolePermission : BaseEntity
 {
     [MultilingualName("شناسه", "المعرف")]
-    public long Id { get; set; }
+    public new long Id { get; set; }
     [MultilingualName("شناسه نقش", "معرف الدور")]
     public long RoleId { get; set; }
     [MultilingualName("شناسه دسترسی", "معرف الإذن")]

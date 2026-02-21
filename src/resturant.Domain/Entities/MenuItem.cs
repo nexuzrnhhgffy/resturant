@@ -14,9 +14,9 @@ public class MenuItem : BaseEntity
     [MultilingualName("شناسه دسته", "معرف الفئة")]
     public long CategoryId { get; set; }
     [MultilingualName("نام کالا", "اسم العنصر")]
-    public string ItemName { get; set; }
+    public string? ItemName { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("قیمت", "السعر")]
     public decimal Price { get; set; }
     [MultilingualName("قیمت تمام شده", "التكلفة")]
@@ -28,11 +28,11 @@ public class MenuItem : BaseEntity
     [MultilingualName("کالری", "سعرات حرارية")]
     public int Calories { get; set; }
     [MultilingualName("آلرژی", "مسببات الحساسية")]
-    public string Allergens { get; set; }
+    public string? Allergens { get; set; }
     [MultilingualName("برچسب ها", "العلامات")]
-    public string Tags { get; set; }
+    public string? Tags { get; set; }
     [MultilingualName("تصویر", "الصورة")]
-    public string ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
     [MultilingualName("ترتیب", "الترتيب")]
     public int DisplayOrder { get; set; }
     [MultilingualName("امتیاز محبوبیت", "درجة الشعبية")]

@@ -14,7 +14,7 @@ public class UserRanking : BaseEntity
     [MultilingualName("شناسه کاربر", "معرف المستخدم")]
     public long AppUserId { get; set; }
     [MultilingualName("سطح رتبه", "مستوى التصنيف")]
-    public string RankLevel { get; set; }
+    public string? RankLevel { get; set; }
     [MultilingualName("کل امتیاز", "إجمالي النقاط")]
     public int TotalPoints { get; set; }
     [MultilingualName("تعداد بازدید", "عدد الزيارات")]
@@ -24,7 +24,7 @@ public class UserRanking : BaseEntity
     [MultilingualName("آخر بازدید", "آخر زيارة")]
     public DateTime? LastVisitDate { get; set; }
     [MultilingualName("مزایا", "الفوائد")]
-    public string Benefits { get; set; }
+    public string? Benefits { get; set; }
     [MultilingualName("از تاریخ", "منذ التاريخ")]
     public DateTime RankSince { get; set; }
 }

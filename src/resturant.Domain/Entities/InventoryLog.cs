@@ -18,7 +18,7 @@ public class InventoryLog : BaseEntity
     [MultilingualName("موجودی فعلی", "المخزون الحالي")]
     public decimal CurrentStock { get; set; }
     [MultilingualName("دلیل", "السبب")]
-    public string Reason { get; set; }
+    public string? Reason { get; set; }
     [MultilingualName("ارجاع", "المرجع")]
     public long? ReferenceId { get; set; }
     [MultilingualName("انجام دهنده", "أجراه")]

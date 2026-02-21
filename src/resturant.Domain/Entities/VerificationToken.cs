@@ -12,13 +12,13 @@ public class VerificationToken : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long TokenId { get; set; }
     [MultilingualName("نوع کاربر", "نوع المستخدم")]
-    public string UserType { get; set; }
+    public string? UserType { get; set; }
     [MultilingualName("شناسه کاربر", "معرف المستخدم")]
     public long UserId { get; set; }
     [MultilingualName("کد تایید", "رمز التحقق")]
-    public string TokenCode { get; set; }
+    public string? TokenCode { get; set; }
     [MultilingualName("هدف", "الغرض")]
-    public string Purpose { get; set; }
+    public string? Purpose { get; set; }
     [MultilingualName("تاریخ انقضا", "تاريخ الانتهاء")]
     public DateTime ExpiresAt { get; set; }
     [MultilingualName("استفاده شده", "مستخدم")]

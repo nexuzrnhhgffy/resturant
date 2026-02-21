@@ -18,5 +18,5 @@ public class Recipe : BaseEntity
     [MultilingualName("مقدار", "الكمية")]
     public decimal Quantity { get; set; }
     [MultilingualName("نوع واحد", "نوع الوحدة")]
-    public string UnitType { get; set; }
+    public string? UnitType { get; set; }
 }

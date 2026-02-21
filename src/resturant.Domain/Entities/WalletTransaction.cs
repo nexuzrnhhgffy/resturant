@@ -16,11 +16,11 @@ public class WalletTransaction : BaseEntity
     [MultilingualName("مبلغ", "المبلغ")]
     public decimal Amount { get; set; }
     [MultilingualName("نوع تراکنش", "نوع المعاملة")]
-    public string TransactionType { get; set; }
+    public string? TransactionType { get; set; }
     [MultilingualName("شناسه ارجاع", "رقم المرجع")]
     public long? ReferenceId { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("موجودی بعد", "الرصيد بعد")]
     public decimal BalanceAfter { get; set; }
 }

@@ -14,19 +14,19 @@ public class Screen : BaseEntity
     [MultilingualName("شناسه شعبه", "معرف الفرع")]
     public long BranchId { get; set; }
     [MultilingualName("نام مانیتور", "اسم الشاشة")]
-    public string ScreenName { get; set; }
+    public string? ScreenName { get; set; }
     [MultilingualName("موقعیت", "الموقع")]
-    public string LocationDescription { get; set; }
+    public string? LocationDescription { get; set; }
     [MultilingualName("آی‌پی", "عنوان IP")]
-    public string IpAddress { get; set; }
+    public string? IpAddress { get; set; }
     [MultilingualName("رزولوشن", "الدقة")]
-    public string Resolution { get; set; }
+    public string? Resolution { get; set; }
     [MultilingualName("جهت", "الاتجاه")]
-    public string Orientation { get; set; }
+    public string? Orientation { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
     [MultilingualName("مک آدرس", "مك")]
-    public string MacAddress { get; set; }
+    public string? MacAddress { get; set; }
     [MultilingualName("زمان آنلاین بودن", "آنلاین")]
-    public string LastHeartbeat { get; set; }
+    public string? LastHeartbeat { get; set; }
 }

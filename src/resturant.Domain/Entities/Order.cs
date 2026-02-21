@@ -20,9 +20,9 @@ public class Order : BaseEntity
     [MultilingualName("شناسه تبلت", "معرف التابلت")]
     public long? TabletId { get; set; }
     [MultilingualName("نوع سفارش", "نوع الطلب")]
-    public string OrderType { get; set; }
+    public string? OrderType { get; set; }
     [MultilingualName("منبع سفارش", "مصدر الطلب")]
-    public string OrderSource { get; set; }
+    public string? OrderSource { get; set; }
     [MultilingualName("جمع کل", "المجموع الكلي")]
     public decimal TotalAmount { get; set; }
     [MultilingualName("تخفیف", "الخصم")]
@@ -42,7 +42,7 @@ public class Order : BaseEntity
     [MultilingualName("زمان واقعی", "الوقت الفعلي")]
     public int ActualPrepTime { get; set; }
     [MultilingualName("توضیحات", "ملاحظات")]
-    public string Notes { get; set; }
+    public string? Notes { get; set; }
     [MultilingualName("پرداخت شده", "مدفوع")]
     public bool IsPaid { get; set; }
 }

@@ -22,7 +22,7 @@ public class AdCampaign : BaseEntity
     [MultilingualName("هزینه کل", "التكلفة الإجمالية")]
     public decimal TotalCost { get; set; }
     [MultilingualName("وضعیت پرداخت", "حالة الدفع")]
-    public string PaymentStatus { get; set; }
+    public string? PaymentStatus { get; set; }
     [MultilingualName("اولویت", "الأولوية")]
     public int Priority { get; set; }
     [MultilingualName("حداکثر پخش", "الحد الأقصى للتشغيل")]

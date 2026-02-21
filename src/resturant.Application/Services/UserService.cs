@@ -53,7 +53,7 @@ public class UserService : IUserService
     {
         var user = (await _unitOfWork.AppUsers.FindAsync(u => u.Email == dto.Email)).FirstOrDefault();
         
-        if (user == null || !VerifyPassword(dto.Password, user.PasswordHash))
+        if (user == null || !VerifyPassword(dto.Password, user.PasswordHash ?? ""))
         {
             return new AuthResponseDto
             {
@@ -161,18 +161,18 @@ public class UserService : IUserService
         return users.Select(u => new UserManagementDto
         {
             AppUserId = u.AppUserId,
-            FirstName = u.FirstName,
-            LastName = u.LastName,
-            Phone = u.Phone,
-            Email = u.Email,
-            CustomerType = u.CustomerType,
+            FirstName = u.FirstName ?? string.Empty,
+            LastName = u.LastName ?? string.Empty,
+            Phone = u.Phone ?? string.Empty,
+            Email = u.Email ?? string.Empty,
+            CustomerType = u.CustomerType ?? string.Empty,
             LoyaltyPoints = u.LoyaltyPoints,
             TotalSpent = u.TotalSpent,
             VisitCount = u.VisitCount,
             LastVisit = u.LastVisit,
             RegistrationDate = u.RegistrationDate,
             IsActive = u.IsActive,
-            Notes = u.Notes,
+            Notes = u.Notes ?? string.Empty,
             Roles = "No Roles" // Will be updated with actual roles
         }).ToList();
     }
@@ -187,11 +187,11 @@ public class UserService : IUserService
         return new UserDetailDto
         {
             AppUserId = user.AppUserId,
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            Phone = user.Phone,
-            Email = user.Email,
-            CustomerType = user.CustomerType,
+            FirstName = user.FirstName ?? string.Empty,
+            LastName = user.LastName ?? string.Empty,
+            Phone = user.Phone ?? string.Empty,
+            Email = user.Email ?? string.Empty,
+            CustomerType = user.CustomerType ?? string.Empty,
             LoyaltyPoints = user.LoyaltyPoints,
             TotalSpent = user.TotalSpent,
             VisitCount = user.VisitCount,
@@ -199,7 +199,7 @@ public class UserService : IUserService
             BirthDate = user.BirthDate,
             RegistrationDate = user.RegistrationDate,
             IsActive = user.IsActive,
-            Notes = user.Notes,
+            Notes = user.Notes ?? string.Empty,
             RoleIds = userRoles.Select(ur => ur.RoleId).ToList()
         };
     }
@@ -348,8 +348,8 @@ public class UserService : IUserService
         return roles.Where(r => r.IsActive).Select(r => new RoleDto
         {
             RoleId = r.RoleId,
-            RoleName = r.RoleName,
-            Description = r.Description,
+            RoleName = r.RoleName ?? string.Empty,
+            Description = r.Description ?? string.Empty,
             IsActive = r.IsActive,
             PermissionCount = 0,
             UserCount = 0
@@ -367,8 +367,8 @@ public class UserService : IUserService
         return new RoleDto
         {
             RoleId = role.RoleId,
-            RoleName = role.RoleName,
-            Description = role.Description,
+            RoleName = role.RoleName ?? string.Empty,
+            Description = role.Description ?? string.Empty,
             IsActive = role.IsActive,
             PermissionCount = permissions.Count,
             UserCount = users.Count,
@@ -450,9 +450,9 @@ public class UserService : IUserService
         return permissions.Select(p => new PermissionDto
         {
             PermissionId = p.PermissionId,
-            PermissionCode = p.PermissionCode,
-            Description = p.Description,
-            Category = p.Category
+            PermissionCode = p.PermissionCode ?? string.Empty,
+            Description = p.Description ?? string.Empty,
+            Category = p.Category ?? string.Empty
         }).ToList();
     }
 
@@ -527,10 +527,10 @@ public class UserService : IUserService
         return new UserDto
         {
             AppUserId = user.AppUserId,
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            Phone = user.Phone,
-            Email = user.Email,
+            FirstName = user.FirstName ?? string.Empty,
+            LastName = user.LastName ?? string.Empty,
+            Phone = user.Phone ?? string.Empty,
+            Email = user.Email ?? string.Empty,
             RegistrationDate = user.RegistrationDate,
             LoyaltyPoints = user.LoyaltyPoints,
             TotalSpent = user.TotalSpent,

@@ -83,7 +83,7 @@ public class OrderService : IOrderService
                 Quantity = item.Quantity,
                 UnitPrice = menuItem.Price,
                 Subtotal = subtotal,
-                SpecialInstructions = item.SpecialInstructions,
+                SpecialInstructions = item.SpecialInstructions ?? string.Empty,
                 ItemStatus = "Pending"
             });
         }
@@ -120,7 +120,7 @@ public class OrderService : IOrderService
             FinalAmount = finalAmount,
             OrderStatus = OrderStatus.Pending,
             OrderDate = DateTime.UtcNow,
-            Notes = dto.Notes,
+            Notes = dto.Notes ?? string.Empty,
             IsPaid = false
         };
 
@@ -191,13 +191,13 @@ public class OrderService : IOrderService
         {
             OrderId = order.OrderId,
             AppUserId = order.AppUserId,
-            CustomerName = user != null ? $"{user.FirstName} {user.LastName}" : null,
+            CustomerName = user != null ? $"{user.FirstName ?? ""} {user.LastName ?? ""}".Trim() : null,
             BranchId = order.BranchId,
-            BranchName = branch?.BranchName,
+            BranchName = branch?.BranchName ?? string.Empty,
             TableId = order.TableId,
-            TableName = table?.TableName,
-            OrderType = order.OrderType,
-            OrderSource = order.OrderSource,
+            TableName = table?.TableName ?? string.Empty,
+            OrderType = order.OrderType ?? string.Empty,
+            OrderSource = order.OrderSource ?? string.Empty,
             TotalAmount = order.TotalAmount,
             DiscountAmount = order.DiscountAmount,
             TaxAmount = order.TaxAmount,
@@ -207,7 +207,7 @@ public class OrderService : IOrderService
             OrderDate = order.OrderDate,
             EstimatedTime = order.EstimatedTime,
             ActualPrepTime = order.ActualPrepTime,
-            Notes = order.Notes,
+            Notes = order.Notes ?? string.Empty,
             IsPaid = order.IsPaid,
             Items = itemDtos
         };

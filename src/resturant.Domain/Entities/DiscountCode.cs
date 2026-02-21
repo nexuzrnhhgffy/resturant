@@ -12,9 +12,9 @@ public class DiscountCode : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long CodeId { get; set; }
     [MultilingualName("کد", "الرمز")]
-    public string Code { get; set; }
+    public string? Code { get; set; }
     [MultilingualName("نوع تخفیف", "نوع الخصم")]
-    public string DiscountType { get; set; }
+    public string? DiscountType { get; set; }
     [MultilingualName("مقدار", "القيمة")]
     public decimal Value { get; set; }
     [MultilingualName("حداکثر استفاده", "الحد الأقصى للاستخدام")]

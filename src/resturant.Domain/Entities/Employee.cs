@@ -16,9 +16,9 @@ public class Employee : BaseEntity
     [MultilingualName("شناسه کاربر", "معرف المستخدم")]
     public long AppUserId { get; set; }
     [MultilingualName("کد پرسنلی", "رمز الموظف")]
-    public string EmployeeCode { get; set; }
+    public string? EmployeeCode { get; set; }
     [MultilingualName("نقش", "الدور")]
-    public string Role { get; set; }
+    public string? Role { get; set; }
     [MultilingualName("حقوق", "الراتب")]
     public decimal Salary { get; set; }
     [MultilingualName("تاریخ استخدام", "تاريخ التوظيف")]
@@ -26,5 +26,5 @@ public class Employee : BaseEntity
     [MultilingualName("فعال", "نشط")]
     public bool IsActive { get; set; }
     [MultilingualName("دسترسی ها", "الأذونات")]
-    public string Permissions { get; set; }
+    public string? Permissions { get; set; }
 }

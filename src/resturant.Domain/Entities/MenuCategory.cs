@@ -16,11 +16,11 @@ public class MenuCategory : BaseEntity
     [MultilingualName("شناسه والد", "معرف الوالدين")]
     public long? ParentCategoryId { get; set; }
     [MultilingualName("نام", "الاسم")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("تصویر", "الصورة")]
-    public string ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
     [MultilingualName("ترتیب نمایش", "ترتيب العرض")]
     public int DisplayOrder { get; set; }
     [MultilingualName("فعال", "نشط")]

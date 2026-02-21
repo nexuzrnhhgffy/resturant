@@ -14,11 +14,11 @@ public class Tablet : BaseEntity
     [MultilingualName("شناسه شعبه", "معرف الفرع")]
     public long BranchId { get; set; }
     [MultilingualName("نام تبلت", "اسم التابلت")]
-    public string TabletName { get; set; }
+    public string? TabletName { get; set; }
     [MultilingualName("شماره سریال", "الرقم التسلسلي")]
-    public string SerialNumber { get; set; }
+    public string? SerialNumber { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
     [MultilingualName("آخرین حضور", "آخر ظهور")]
     public DateTime? LastSeen { get; set; }
     [MultilingualName("میزان شارژ", "مستوى البطارية")]

@@ -14,19 +14,19 @@ public class Camera : BaseEntity
     [MultilingualName("شناسه شعبه", "معرف الفرع")]
     public long BranchId { get; set; }
     [MultilingualName("نام دوربین", "اسم الكاميرا")]
-    public string CameraName { get; set; }
+    public string? CameraName { get; set; }
     [MultilingualName("موقعیت نصب", "موقع التركيب")]
-    public string LocationDescription { get; set; }
+    public string? LocationDescription { get; set; }
     [MultilingualName("آدرس IP", "عنوان IP")]
-    public string IpAddress { get; set; }
+    public string? IpAddress { get; set; }
     [MultilingualName("آدرس استریم", "رابط البث")]
-    public string StreamUrl { get; set; }
+    public string? StreamUrl { get; set; }
     [MultilingualName("نام کاربری", "اسم المستخدم")]
-    public string Username { get; set; }
+    public string? Username { get; set; }
     [MultilingualName("رمز عبور", "كلمة المرور")]
-    public string Password { get; set; }
+    public string? Password { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
     [MultilingualName("فعال", "نشط")]
     public bool IsActive { get; set; }
 }

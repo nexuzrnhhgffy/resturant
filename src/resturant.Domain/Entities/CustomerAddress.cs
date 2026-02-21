@@ -14,9 +14,9 @@ public class CustomerAddress : BaseEntity
     [MultilingualName("شناسه کاربر", "معرف المستخدم")]
     public long AppUserId { get; set; }
     [MultilingualName("عنوان", "العنوان")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
     [MultilingualName("آدرس کامل", "العنوان الكامل")]
-    public string Address { get; set; }
+    public string? Address { get; set; }
     [MultilingualName("عرض جغرافیایی", "خط العرض")]
     public decimal Latitude { get; set; }
     [MultilingualName("طول جغرافیایی", "خط الطول")]

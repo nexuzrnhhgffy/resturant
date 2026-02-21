@@ -16,9 +16,9 @@ public class JournalEntry : BaseEntity
     [MultilingualName("تاریخ سند", "تاريخ القيد")]
     public DateTime EntryDate { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("نوع مرجع", "نوع المرجع")]
-    public string ReferenceType { get; set; }
+    public string? ReferenceType { get; set; }
     [MultilingualName("شناسه مرجع", "معرف المرجع")]
     public long? ReferenceId { get; set; }
     [MultilingualName("حساب بدهکار", "الحساب المدين")]

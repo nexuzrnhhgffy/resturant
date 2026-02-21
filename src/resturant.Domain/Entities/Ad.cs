@@ -14,13 +14,13 @@ public class Ad : BaseEntity
     [MultilingualName("شناسه مشتری", "معرف العميل")]
     public long ClientId { get; set; }
     [MultilingualName("عنوان تبلیغ", "عنوان الإعلان")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("نوع مدیا", "نوع الوسائط")]
-    public string MediaType { get; set; }
+    public string? MediaType { get; set; }
     [MultilingualName("آدرس فایل", "رابط الملف")]
-    public string FileUrl { get; set; }
+    public string? FileUrl { get; set; }
     [MultilingualName("مدت نمایش (ثانیه)", "مدة العرض (ثانية)")]
     public int DurationSeconds { get; set; }
     [MultilingualName("فعال", "نشط")]

@@ -12,15 +12,15 @@ public class SitePage : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long PageId { get; set; }
     [MultilingualName("عنوان", "العنوان")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
     [MultilingualName("اسلاگ", "الرابط")]
-    public string Slug { get; set; }
+    public string? Slug { get; set; }
     [MultilingualName("محتوا", "المحتوى")]
-    public string Content { get; set; }
+    public string? Content { get; set; }
     [MultilingualName("عنوان متا", "عنوان ميتا")]
-    public string MetaTitle { get; set; }
+    public string? MetaTitle { get; set; }
     [MultilingualName("توضیحات متا", "وصف ميتا")]
-    public string MetaDescription { get; set; }
+    public string? MetaDescription { get; set; }
     [MultilingualName("منتشر شده", "منشور")]
     public bool IsPublished { get; set; }
 }

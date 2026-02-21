@@ -14,7 +14,7 @@ public class Modifier : BaseEntity
     [MultilingualName("شناسه گروه", "معرف المجموعة")]
     public long ModifierGroupId { get; set; }
     [MultilingualName("نام", "الاسم")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
     [MultilingualName("قیمت اضافه", "سعر إضافي")]
     public decimal ExtraPrice { get; set; }
     [MultilingualName("موجود", "متاح")]

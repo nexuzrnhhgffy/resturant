@@ -14,19 +14,19 @@ public class PosDevice : BaseEntity
     [MultilingualName("شناسه شعبه", "معرف الفرع")]
     public long BranchId { get; set; }
     [MultilingualName("نام دستگاه", "اسم الجهاز")]
-    public string DeviceName { get; set; }
+    public string? DeviceName { get; set; }
     [MultilingualName("شماره سریال", "الرقم التسلسلي")]
-    public string SerialNumber { get; set; }
+    public string? SerialNumber { get; set; }
     [MultilingualName("مدل", "الطراز")]
-    public string Model { get; set; }
+    public string? Model { get; set; }
     [MultilingualName("آدرس IP", "عنوان IP")]
-    public string IpAddress { get; set; }
+    public string? IpAddress { get; set; }
     [MultilingualName("شماره پذیرنده", "رقم التاجر")]
-    public string MerchantId { get; set; }
+    public string? MerchantId { get; set; }
     [MultilingualName("شماره ترمینال", "رقم المحطة")]
-    public string TerminalId { get; set; }
+    public string? TerminalId { get; set; }
     [MultilingualName("وضعیت", "الحالة")]
-    public string Status { get; set; }
+    public string? Status { get; set; }
     [MultilingualName("آخرین اتصال", "آخر اتصال")]
     public DateTime? LastConnection { get; set; }
 }

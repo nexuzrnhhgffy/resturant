@@ -12,15 +12,15 @@ public class BlogPost : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long PostId { get; set; }
     [MultilingualName("عنوان", "العنوان")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
     [MultilingualName("اسلاگ", "الرابط")]
-    public string Slug { get; set; }
+    public string? Slug { get; set; }
     [MultilingualName("خلاصه", "ملخص")]
-    public string Summary { get; set; }
+    public string? Summary { get; set; }
     [MultilingualName("محتوا", "المحتوى")]
-    public string Content { get; set; }
+    public string? Content { get; set; }
     [MultilingualName("تصویر کاور", "صورة الغلاف")]
-    public string CoverImage { get; set; }
+    public string? CoverImage { get; set; }
     [MultilingualName("شناسه نویسنده", "معرف المؤلف")]
     public long AuthorId { get; set; }
     [MultilingualName("تعداد بازدید", "عدد المشاهدات")]

@@ -12,9 +12,9 @@ public class Role : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long RoleId { get; set; }
     [MultilingualName("نام نقش", "اسم الدور")]
-    public string RoleName { get; set; }
+    public string? RoleName { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("فعال", "نشط")]
     public bool IsActive { get; set; }
 }

@@ -18,9 +18,9 @@ public class CashRegisterLog : BaseEntity
     [MultilingualName("مبلغ", "المبلغ")]
     public decimal Amount { get; set; }
     [MultilingualName("نوع حرکت", "نوع الحركة")]
-    public string TransactionType { get; set; }
+    public string? TransactionType { get; set; }
     [MultilingualName("توضیحات", "ملاحظات")]
-    public string Notes { get; set; }
+    public string? Notes { get; set; }
     [MultilingualName("تاریخ", "التاريخ")]
     public DateTime LogDate { get; set; }
 }

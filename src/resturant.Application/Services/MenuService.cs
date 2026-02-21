@@ -45,17 +45,17 @@ public class MenuService : IMenuService
         {
             MenuItemId = item.MenuItemId,
             CategoryId = item.CategoryId,
-            CategoryName = category?.Name,
-            ItemName = item.ItemName,
-            Description = item.Description,
+            CategoryName = category?.Name ?? string.Empty,
+            ItemName = item.ItemName ?? string.Empty,
+            Description = item.Description ?? string.Empty,
             Price = item.Price,
             Cost = item.Cost,
             IsAvailable = item.IsAvailable,
             PreparationTime = item.PreparationTime,
             Calories = item.Calories,
-            Allergens = item.Allergens,
-            Tags = item.Tags,
-            ImageUrl = item.ImageUrl,
+            Allergens = item.Allergens ?? string.Empty,
+            Tags = item.Tags ?? string.Empty,
+            ImageUrl = item.ImageUrl ?? string.Empty,
             DisplayOrder = item.DisplayOrder,
             PopularityScore = item.PopularityScore
         };
@@ -91,10 +91,10 @@ public class MenuService : IMenuService
             {
                 MenuItemId = m.MenuItemId,
                 CategoryId = m.CategoryId,
-                ItemName = m.ItemName,
-                Description = m.Description,
+                ItemName = m.ItemName ?? string.Empty,
+                Description = m.Description ?? string.Empty,
                 Price = m.Price,
-                ImageUrl = m.ImageUrl,
+                ImageUrl = m.ImageUrl ?? string.Empty,
                 PopularityScore = m.PopularityScore
             });
     }
@@ -108,9 +108,9 @@ public class MenuService : IMenuService
         {
             CategoryId = category.CategoryId,
             ParentCategoryId = category.ParentCategoryId,
-            Name = category.Name,
-            Description = category.Description,
-            ImageUrl = category.ImageUrl,
+            Name = category.Name ?? string.Empty,
+            Description = category.Description ?? string.Empty,
+            ImageUrl = category.ImageUrl ?? string.Empty,
             DisplayOrder = category.DisplayOrder,
             IsActive = category.IsActive,
             Items = items
@@ -119,10 +119,10 @@ public class MenuService : IMenuService
                 {
                     MenuItemId = m.MenuItemId,
                     CategoryId = m.CategoryId,
-                    ItemName = m.ItemName,
-                    Description = m.Description,
+                    ItemName = m.ItemName ?? string.Empty,
+                    Description = m.Description ?? string.Empty,
                     Price = m.Price,
-                    ImageUrl = m.ImageUrl,
+                    ImageUrl = m.ImageUrl ?? string.Empty,
                     IsAvailable = m.IsAvailable,
                     PopularityScore = m.PopularityScore
                 }).ToList(),

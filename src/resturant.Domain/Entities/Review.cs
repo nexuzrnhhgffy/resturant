@@ -20,7 +20,7 @@ public class Review : BaseEntity
     [MultilingualName("امتیاز", "التقييم")]
     public int Rating { get; set; }
     [MultilingualName("نظر", "تعليق")]
-    public string Comment { get; set; }
+    public string? Comment { get; set; }
     [MultilingualName("تایید شده", "موافق عليه")]
     public bool IsApproved { get; set; }
 }

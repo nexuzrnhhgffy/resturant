@@ -18,9 +18,9 @@ public class Expense : BaseEntity
     [MultilingualName("مبلغ", "المبلغ")]
     public decimal Amount { get; set; }
     [MultilingualName("روش پرداخت", "طريقة الدفع")]
-    public string PaymentMethod { get; set; }
+    public string? PaymentMethod { get; set; }
     [MultilingualName("توضیحات", "الوصف")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     [MultilingualName("تاریخ هزینه", "تاريخ المصروف")]
     public DateTime ExpenseDate { get; set; }
     [MultilingualName("پرداخت کننده", "المدفوع بواسطة")]

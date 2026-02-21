@@ -12,9 +12,9 @@ public class RefreshToken : BaseEntity
     [MultilingualName("شناسه", "المعرف")]
     public long RefreshTokenId { get; set; }
     [MultilingualName("توکن", "الرمز")]
-    public string Token { get; set; }
+    public string? Token { get; set; }
     [MultilingualName("نوع کاربر", "نوع المستخدم")]
-    public string UserType { get; set; }
+    public string? UserType { get; set; }
     [MultilingualName("شناسه کاربر", "معرف المستخدم")]
     public long UserId { get; set; }
     [MultilingualName("تاریخ انقضا", "تاريخ الانتهاء")]
@@ -22,7 +22,7 @@ public class RefreshToken : BaseEntity
     [MultilingualName("تاریخ ابطال", "تاريخ الإبطال")]
     public DateTime? RevokedAt { get; set; }
     [MultilingualName("آی‌پی", "عنوان IP")]
-    public string IpAddress { get; set; }
+    public string? IpAddress { get; set; }
     [MultilingualName("مرورگر", "المتصفح")]
-    public string UserAgent { get; set; }
+    public string? UserAgent { get; set; }
 }
