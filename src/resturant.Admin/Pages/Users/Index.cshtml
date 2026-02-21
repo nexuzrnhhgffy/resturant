@@ -1,0 +1,186 @@
+@page "/Users"
+@model UsersIndexModel
+@{
+    ViewData["Title"] = "مدیریت کاربران";
+}
+
+<!-- PAGE-HEADER -->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title">مدیریت کاربران</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Management"><i class="fe fe-home"></i> مدیریت</a></li>
+            <li class="breadcrumb-item active" aria-current="page">کاربران</li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <a href="/Users/Create" class="btn btn-primary"><i class="fe fe-plus"></i> کاربر جدید</a>
+    </div>
+</div>
+<!-- PAGE-HEADER END -->
+
+<!-- Row -->
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h3 class="card-title">لیست کاربران</h3>
+                <div class="ms-auto">
+                    <input type="text" id="searchInput" class="form-control" placeholder="جستجو..." style="width: 200px;">
+                </div>
+            </div>
+            <div class="card-body">
+                @if (Model.Users != null && Model.Users.Count > 0)
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered mb-0 text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>شناسه</th>
+                                    <th>نام کامل</th>
+                                    <th>ایمیل</th>
+                                    <th>نوع مشتری</th>
+                                    <th>نقش‌ها</th>
+                                    <th>امتیاز وفاداری</th>
+                                    <th>وضعیت</th>
+                                    <th>تاریخ ثبت</th>
+                                    <th>تنظیمات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var user in Model.Users)
+                                {
+                                    <tr>
+                                        <td><span class="badge badge-primary">#@user.AppUserId</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-md rounded-circle me-2 bg-primary-gradient text-white d-flex align-items-center justify-content-center">
+                                                    @user.FirstName[0]@user.LastName[0]
+                                                </div>
+                                                <span>@user.FullName</span>
+                                            </div>
+                                        </td>
+                                        <td>@user.Email</td>
+                                        <td>
+                                            <span class="badge badge-info-light">@user.CustomerType</span>
+                                        </td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(user.Roles) && user.Roles != "No Roles")
+                                            {
+                                                <span class="badge badge-success-light">@user.Roles</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-secondary-light">هیچ نقشی ندارد</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <div class="progress progress-sm mb-0" style="height: 5px;">
+                                                @{
+                                                    var percentage = Math.Min((user.LoyaltyPoints / 100.0) * 100, 100);
+                                                }
+                                                <div class="progress-bar bg-success" style="width: @percentage%"></div>
+                                            </div>
+                                            <small>@user.LoyaltyPoints نقطه</small>
+                                        </td>
+                                        <td>
+                                            @if (user.IsActive)
+                                            {
+                                                <span class="badge badge-success">فعال</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">غیرفعال</span>
+                                            }
+                                        </td>
+                                        <td>@user.RegistrationDate.ToString("yyyy/MM/dd")</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <a href="/Users/@user.AppUserId" class="btn btn-sm btn-info" title="نمایش">
+                                                    <i class="fe fe-eye"></i>
+                                                </a>
+                                                <a href="/Users/@user.AppUserId/Edit" class="btn btn-sm btn-warning" title="ویرایش">
+                                                    <i class="fe fe-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-danger" onclick="deleteUser(@user.AppUserId)" title="حذف">
+                                                    <i class="fe fe-trash-2"></i>
+                                                </button>
+                                                @if (user.IsActive)
+                                                {
+                                                    <button type="button" class="btn btn-sm btn-secondary" onclick="deactivateUser(@user.AppUserId)" title="غیرفعال">
+                                                        <i class="fe fe-x"></i>
+                                                    </button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="button" class="btn btn-sm btn-secondary" onclick="activateUser(@user.AppUserId)" title="فعال">
+                                                        <i class="fe fe-check"></i>
+                                                    </button>
+                                                }
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-5">
+                        <i class="fe fe-inbox fs-40 text-muted mb-3"></i>
+                        <p class="text-muted">کاربری یافت نشد</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row -->
+
+@section Scripts {
+    <script>
+        function deleteUser(userId) {
+            if (confirm('آیا می‌خواهید این کاربر را حذف کنید؟')) {
+                fetch(`/api/users/${userId}`, {
+                    method: 'DELETE'
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+        function deactivateUser(userId) {
+            if (confirm('آیا می‌خواهید این کاربر را غیرفعال کنید؟')) {
+                fetch(`/api/users/${userId}/deactivate`, {
+                    method: 'POST'
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+        function activateUser(userId) {
+            if (confirm('آیا می‌خواهید این کاربر را فعال کنید؟')) {
+                fetch(`/api/users/${userId}/activate`, {
+                    method: 'POST'
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+        $('#searchInput').on('keyup', function () {
+            var value = $(this).val().toLowerCase();
+            $('table tbody tr').filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    </script>
+}

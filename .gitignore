@@ -1,0 +1,140 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+*.swp
+*.swo
+*~
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build lock files
+project.lock.json
+project.fragments.lock.json
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+*.nupkg
+
+# Local NuGet cache
+~/.nuget/packages/
+
+# Test Results
+TestResults/
+*.trx
+
+# Code coverage results
+coverage/
+*.coverage
+*.coveragexml
+OpenCover/
+
+# Rider
+.idea/
+*.sln.iml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Visual Studio
+*.vcxproj.filters
+*.vcxproj.user
+
+# User credentials and secrets
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+!appsettings.json
+secrets.json
+*.key
+*.pem
+
+# Database files
+*.mdf
+*.ldf
+*.db
+*.sqlite
+*.sqlite3
+
+# Node modules (for the Admin project)
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# SSL certificates
+*.pfx
+*.cer
+*.crt
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Extension-specific
+.publish/
+
+# ASP.NET Core
+dist/
+wwwroot/lib/
+wwwroot/ngApp/
+
+# Migrations (if using local SQLite)
+Migrations/
+
+# Output files
+*.pdb
+*.exe
+*.dll

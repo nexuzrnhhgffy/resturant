@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- META DATA -->
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Sash – ASP.NET Core6 Bootstrap 5  Admin & Dashboard Template">
+        <meta name="author" content="Spruko Technologies Private Limited">        
+        <meta name="keywords" content="admin dashboard, admin dashboard template, admin template, bootstrap 5 ASP.NET Core Mvc, ASP.NET Core Mvc, ASP.NET Core Mvc bootstrap admin, ASP.NET Core Mvc template, ASP.NET Core Mvc bootstrap template, ASP.NET Core Mvc admin, ASP.NET Core Mvc admin dashboard, ASP.NET Core Mvc admin dashboard template, ASP.NET Core Mvc admin panel, ASP.NET Core Mvc admin template, ASP.NET Core Mvc dashboard, dashboard template">
+		@* <title>@ViewData["Title"]  Sash</title> *@
+		
+		<!-- FAVICON -->
+        <link rel="shortcut icon" type="image/x-icon" href="~/assets/images/brand/favicon.ico" />
+
+        <!-- TITLE -->
+        <title>Sash – ASP.NET Core6 Bootstrap 5 Admin & Dashboard Template</title>
+
+        <!-- BOOTSTRAP CSS -->
+        <link id="style" href="~/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true"/>
+
+        <!-- STYLE CSS -->
+        <link href="~/assets/css/style.css"  rel="stylesheet" asp-append-version="true"/>
+        <link href="~/assets/css/dark-style.css" rel="stylesheet" asp-append-version="true"/>
+        <link href="~/assets/css/transparent-style.css" rel="stylesheet" asp-append-version="true">
+        <link href="~/assets/css/skin-modes.css" rel="stylesheet" asp-append-version="true"/>
+
+         @* @RenderSection("Styles",false/*required*/) *@
+        @await RenderSectionAsync("Styles", required: false)
+
+        <!--- FONT-ICONS CSS -->
+        <link href="~/assets/css/icons.css" rel="stylesheet" />
+
+        <!-- COLOR SKIN CSS -->
+        <link id="theme" rel="stylesheet" type="text/css" media="all" asp-append-version="true" href="~/assets/colors/color1.css" />
+
+        <!-- INTERNAL Switcher css -->
+        <link href="~/assets/switcher/css/switcher.css" rel="stylesheet" asp-append-version="true"/>
+        <link href="~/assets/switcher/demo.css" rel="stylesheet" asp-append-version="true"/>
+
+	</head>
+	<body class="app sidebar-mini ltr light-mode">
+
+		<!-- GLOBAL-LOADER -->
+        <div id="global-loader">
+            <img src="../assets/images/loader.svg" class="loader-img" alt="Loader">
+        </div>
+        <!-- /GLOBAL-LOADER -->
+
+		<!-- PAGE -->
+		<div class="page">
+			<div class="page-main">
+
+                <!-- app header code -->
+				<partial name="~/Pages/Shared/layouts/_app-header.cshtml" />
+                <!-- End app header Code -->
+                
+                <!-- app Sidebar Code -->
+				<partial name="~/Pages/Shared/layouts/_app-sidebar.cshtml" />
+                <!-- End app Sidebar Code -->
+				
+				
+				<!--app-content open-->
+				<div class="main-content app-content mt-0">
+					<div class="side-app">
+
+						<!-- CONTAINER -->
+						<div class="main-container container-fluid">  
+							@RenderBody()
+					    </div>
+					</div>
+				</div>
+				<!-- CONTAINER END -->
+			</div>
+
+			<partial name="~/Pages/Shared/layouts/_sidebar-right.cshtml" />
+			<partial name="~/Pages/Shared/layouts/_model.cshtml" />
+			<partial name="~/Pages/Shared/layouts/_footer.cshtml" />         
+
+		</div>
+		
+			<!-- BACK-TO-TOP -->
+            <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+            <!-- JQUERY JS -->
+            <script src="~/assets/js/jquery.min.js"></script>
+
+            <!-- BOOTSTRAP JS -->
+            <script src="~/assets/plugins/bootstrap/js/popper.min.js"></script>
+            <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+            <!-- SIDE-MENU JS -->
+            <script src="~/assets/plugins/sidemenu/sidemenu.js"></script>
+
+            <!-- TypeHead js -->
+            <script src="~/assets/plugins/bootstrap5-typehead/autocomplete.js"></script>
+            <script src="~/assets/js/typehead.js"></script>
+
+            <!-- SIDEBAR JS -->
+            <script src="~/assets/plugins/sidebar/sidebar.js"></script>
+
+            <!-- Perfect SCROLLBAR JS-->
+            <script src="~/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+            <script src="~/assets/plugins/p-scroll/pscroll.js"></script>
+            <script src="~/assets/plugins/p-scroll/pscroll-1.js"></script>
+
+
+            @* @RenderSection("Scripts",false/*required*/) *@
+            @await RenderSectionAsync("Scripts", required: false)
+            
+            <!-- Color Theme js -->
+            <script src="~/assets/js/themeColors.js"></script>
+
+            <!-- Sticky js -->
+            <script src="~/assets/js/sticky.js"></script>
+
+            <!-- CUSTOM JS -->
+            <script src="~/assets/js/custom1.js"></script>
+
+            <!-- Switcher js -->
+            <script src="~/assets/switcher/js/switcher.js"></script>
+			
+	 </body>
+</html>

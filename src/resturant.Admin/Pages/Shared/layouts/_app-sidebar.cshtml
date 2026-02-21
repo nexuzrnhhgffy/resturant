@@ -1,0 +1,353 @@
+
+                <!--APP-SIDEBAR-->
+                <div class="sticky">
+                    <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+                    <div class="app-sidebar">
+                        <div class="side-header">
+                            <a class="header-brand1" asp-area="" asp-page="/Index">
+                                <img src="../assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                                <img src="../assets/images/brand/logo-1.png" class="header-brand-img toggle-logo"
+                                    alt="logo">
+                                <img src="../assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
+                                <img src="../assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
+                                    alt="logo">
+                            </a>
+                            <!-- LOGO -->
+                        </div>
+                        <div class="main-sidemenu">
+                            <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg"
+                                    fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
+                                </svg></div>
+                            <ul class="side-menu">
+                                <li class="sub-category">
+                                    <h3>Main</h3>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item has-link" data-bs-toggle="slide" asp-area="" asp-page="/Index"><i
+                                            class="side-menu__icon fe fe-home"></i><span
+                                            class="side-menu__label">Dashboard</span></a>
+                                </li>
+                                <li class="sub-category">
+                                    <h3>مدیریت سیستم</h3>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-settings"></i><span
+                                            class="side-menu__label">مدیریت</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">مدیریت</a></li>
+                                        <li><a asp-area="" asp-page="/Management/Index" class="slide-item"><i class="fe fe-bar-chart-2"></i> خلاصه مدیریت</a></li>
+                                        <li><a asp-area="" asp-page="/Users/Index" class="slide-item"><i class="fe fe-users"></i> مدیریت کاربران</a></li>
+                                        <li><a asp-area="" asp-page="/Roles/Index" class="slide-item"><i class="fe fe-shield"></i> مدیریت نقش‌ها</a></li>
+                                        <li><a asp-area="" asp-page="/Permissions/Index" class="slide-item"><i class="fe fe-check-square"></i> مدیریت دسترسی‌ها</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sub-category">
+                                    <h3>UI Kit</h3>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-slack"></i><span
+                                            class="side-menu__label">Apps</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
+                                        <li><a asp-area="" asp-page="/Cards/Index" class="slide-item"> Cards design</a></li>
+                                        <li><a asp-area="" asp-page="/Calendar/Index" class="slide-item"> Default calendar</a></li>
+                                        <li><a asp-area="" asp-page="/Calendar2/Index" class="slide-item"> Full calendar</a></li>
+                                        <li><a asp-area="" asp-page="/Chat/Index" class="slide-item"> Chat</a></li>
+                                        <li><a asp-area="" asp-page="/Notify/Index" class="slide-item"> Notifications</a></li>
+                                        <li><a asp-area="" asp-page="/Sweetalert/Index" class="slide-item"> Sweet alerts</a></li>
+                                        <li><a asp-area="" asp-page="/Rangeslider/Index" class="slide-item"> Range slider</a></li>
+                                        <li><a asp-area="" asp-page="/Scroll/Index" class="slide-item"> Content Scroll bar</a></li>
+                                        <li><a asp-area="" asp-page="/Loaders/Index" class="slide-item"> Loaders</a></li>
+                                        <li><a asp-area="" asp-page="/Counters/Index" class="slide-item"> Counters</a></li>
+                                        <li><a asp-area="" asp-page="/Rating/Index" class="slide-item"> Rating</a></li>
+                                        <li><a asp-area="" asp-page="/Timeline/Index" class="slide-item"> Timeline</a></li>
+                                        <li><a asp-area="" asp-page="/Treeview/Index" class="slide-item"> Treeview</a></li>
+                                        <li><a asp-area="" asp-page="/Chart/Index" class="slide-item"> Charts</a></li>
+                                        <li><a asp-area="" asp-page="/Footers/Index" class="slide-item"> Footers</a></li>
+                                        <li><a asp-area="" asp-page="/UsersList/Index" class="slide-item"> User List</a></li>
+                                        <li><a asp-area="" asp-page="/Search/Index" class="slide-item">Search</a></li>
+                                        <li><a asp-area="" asp-page="/CryptoCurrencies/Index" class="slide-item"> Crypto-currencies</a></li>
+                                        <li><a asp-area="" asp-page="/Widgets/Index" class="slide-item"> Widgets</a></li>
+                                    </ul>
+                                </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                        class="side-menu__icon fe fe-package"></i><span
+                                        class="side-menu__label">Bootstrap</span><i
+                                        class="angle fe fe-chevron-right"></i></a>
+                                <ul class="slide-menu mega-slide-menu">
+                                    <li class="side-menu-label1"><a href="javascript:void(0)">Bootstrap</a></li>
+                                    <div class="mega-menu">
+                                        <div class="">
+                                            <ul>
+                                                <li><a asp-area="" asp-page="/Alerts/Index" class="slide-item"> Alerts</a></li>
+                                                <li><a asp-area="" asp-page="/Buttons/Index" class="slide-item"> Buttons</a></li>
+                                                <li><a asp-area="" asp-page="/Colors/Index" class="slide-item"> Colors</a></li>
+                                                <li><a asp-area="" asp-page="/Avatarsquare/Index" class="slide-item"> Avatar Square</a></li>
+                                                <li><a asp-area="" asp-page="/AvatarRadius/Index" class="slide-item"> Avatar Radius</a></li>
+                                                <li><a asp-area="" asp-page="/AvatarRound/Index" class="slide-item"> Avatar Rounded</a></li>
+                                                <li><a asp-area="" asp-page="/Dropdown/Index" class="slide-item"> Dropdowns</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="">
+                                            <ul>
+                                                <li><a asp-area="" asp-page="/Listgroup/Index" class="slide-item"> List Group</a></li>
+                                                <li><a asp-area="" asp-page="/Tags/Index" class="slide-item"> Tags</a></li>
+                                                <li><a asp-area="" asp-page="/Pagination/Index" class="slide-item"> Pagination</a></li>
+                                                <li><a asp-area="" asp-page="/Navigation/Index" class="slide-item"> Navigation</a></li>
+                                                <li><a asp-area="" asp-page="/Typography/Index" class="slide-item"> Typography</a></li>
+                                                <li><a asp-area="" asp-page="/Breadcrumbs/Index" class="slide-item"> Breadcrumbs</a></li>
+                                                <li><a asp-area="" asp-page="/Badge/Index" class="slide-item"> Badges / Pills</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="">
+                                            <ul>
+                                                <li><a asp-area="" asp-page="/Panels/Index" class="slide-item"> Panels</a></li>
+                                                <li><a asp-area="" asp-page="/Thumbnails/Index" class="slide-item"> Thumbnails</a></li>
+                                                <li><a asp-area="" asp-page="/Offcanvas/Index" class="slide-item"> Offcanvas</a></li>
+                                                <li><a asp-area="" asp-page="/Toast/Index" class="slide-item"> toast</a></li>
+                                                <li><a asp-area="" asp-page="/Scrollspy/Index" class="slide-item"> Scrollspy</a></li>
+                                                <li><a asp-area="" asp-page="/Mediaobject/Index" class="slide-item"> Media Object</a></li>
+                                                <li><a asp-area="" asp-page="/Accordion/Index" class="slide-item"> Accordions </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="">
+                                            <ul>
+                                                <li><a asp-area="" asp-page="/tabs/Index" class="slide-item"> Tabs</a></li>
+                                                <li><a asp-area="" asp-page="/Modal/Index" class="slide-item"> Modal</a></li>
+                                                <li><a asp-area="" asp-page="/Tooltipandpopover/Index" class="slide-item"> Tooltip and popover</a></li>
+                                                <li><a asp-area="" asp-page="/Progress/Index" class="slide-item"> Progress</a></li>
+                                                <li><a asp-area="" asp-page="/Carousel/Index" class="slide-item"> Carousels</a></li>
+                                                <li><a asp-area="" asp-page="/Ribbons/Index" class="slide-item"> Ribbons</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                                <li>
+                                    <a class="side-menu__item has-link" asp-area="" asp-page="/LandingPage/Index" target="_blank"><i
+                                            class="side-menu__icon fe fe-zap"></i><span
+                                            class="side-menu__label">Landing Page</span><span class="badge bg-green br-5 side-badge blink-text pb-1">New</span></a>
+                                </li>
+                                <li class="sub-category">
+                                    <h3>Pre-build Pages</h3>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-layers"></i><span
+                                            class="side-menu__label">Pages</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Pages</a></li>
+                                        <li><a asp-area="" asp-page="/Profile/Index" class="slide-item"> Profile</a></li>
+                                        <li><a asp-area="" asp-page="/Editprofile/Index" class="slide-item"> Edit Profile</a></li>
+                                        <li><a asp-area="" asp-page="/NotifyList/Index" class="slide-item"> Notifications List</a></li>
+                                        <li><a asp-area="" asp-page="/EmailCompose/Index" class="slide-item"> Mail-Compose</a></li>
+                                        <li><a asp-area="" asp-page="/EmailInbox/Index" class="slide-item"> Mail-Inbox</a></li>
+                                        <li><a asp-area="" asp-page="/EmailRead/Index" class="slide-item"> Mail-Read</a></li>
+                                        <li><a asp-area="" asp-page="/Gallery/Index" class="slide-item"> Gallery</a></li>
+                                        <li class="sub-slide">
+                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span
+                                                    class="sub-side-menu__label">Forms</span><i
+                                                    class="sub-angle fe fe-chevron-right"></i></a>
+                                            <ul class="sub-slide-menu">
+                                                <li><a asp-area="" asp-page="/FormElements/Index" class="sub-slide-item"> Form Elements</a></li>
+                                                <li><a asp-area="" asp-page="/FormLayouts/Index" class="sub-slide-item"> Form Layouts</a></li>
+                                                <li><a asp-area="" asp-page="/FormAdvanced/Index" class="sub-slide-item"> Form Advanced</a></li>
+                                                <li><a asp-area="" asp-page="/FormEditor/Index" class="sub-slide-item"> Form Editor</a></li>
+                                                <li><a asp-area="" asp-page="/FormWizard/Index" class="sub-slide-item"> Form Wizard</a></li>
+                                                <li><a asp-area="" asp-page="/FormValidation/Index" class="sub-slide-item"> Form Validation</a></li>
+                                                <li><a asp-area="" asp-page="/FormInputSpinners/Index" class="sub-slide-item"> Form Input Spinners</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-slide">
+                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span
+                                                    class="sub-side-menu__label">Tables</span><i
+                                                    class="sub-angle fe fe-chevron-right"></i></a>
+                                            <ul class="sub-slide-menu">
+                                                <li><a asp-area="" asp-page="/Tables/Index" class="sub-slide-item">Default table</a></li>
+                                                <li><a asp-area="" asp-page="/Datatable/Index" class="sub-slide-item"> Data Tables</a></li>
+                                                <li><a asp-area="" asp-page="/EditTable/Index" class="sub-slide-item"> Edit Tables</a></li>
+                                                <li><a asp-area="" asp-page="/ExtensionTables/Index" class="sub-slide-item"> Extension Tables</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-slide">
+                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span
+                                                    class="sub-side-menu__label">Extension</span><i
+                                                    class="sub-angle fe fe-chevron-right"></i></a>
+                                            <ul class="sub-slide-menu">
+                                                <li><a asp-area="" asp-page="/About/Index" class="sub-slide-item"> About Company</a></li>
+                                                <li><a asp-area="" asp-page="/Services/Index" class="sub-slide-item"> Services</a></li>
+                                                <li><a asp-area="" asp-page="/Faq/Index" class="sub-slide-item"> FAQS</a></li>
+                                                <li><a asp-area="" asp-page="/Terms/Index" class="sub-slide-item"> Terms</a></li>
+                                                <li><a asp-area="" asp-page="/Invoice/Index" class="sub-slide-item"> Invoice</a></li>
+                                                <li><a asp-area="" asp-page="/Pricing/Index" class="sub-slide-item"> Pricing Tables</a></li>
+                                                <li><a asp-area="" asp-page="/Settings/Index" class="sub-slide-item"> Settings</a></li>
+                                                <li><a asp-area="" asp-page="/Blog/Index" class="sub-slide-item"> Blog</a></li>
+                                                <li><a asp-area="" asp-page="/BlogDetails/Index" class="sub-slide-item"> Blog Details</a>
+                                                </li>
+                                                <li><a asp-area="" asp-page="/BlogPost/Index" class="sub-slide-item"> Blog Post</a></li>
+                                                <li><a asp-area="" asp-page="/Empty/Index" class="sub-slide-item"> Empty Page</a></li>
+                                                <li><a asp-area="" asp-page="/Construction/Index" class="sub-slide-item"> Under Construction</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a asp-area="" asp-page="/Switcher1/Index" class="slide-item"> Switcher</a></li>
+                                    </ul>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-shopping-bag"></i><span
+                                            class="side-menu__label">E-Commerce</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">E-Commerce</a></li>
+                                        <li><a asp-area="" asp-page="/Shop/Index" class="slide-item"> Shop</a></li>
+                                        <li><a asp-area="" asp-page="/ShopDescription/Index" class="slide-item"> Product Details</a></li>
+                                        <li><a asp-area="" asp-page="/Cart/Index" class="slide-item"> Shopping Cart</a></li>
+                                        <li><a asp-area="" asp-page="/AddProduct/Index" class="slide-item"> Add Product</a></li>
+                                        <li><a asp-area="" asp-page="/Wishlist/Index" class="slide-item"> Wishlist</a></li>
+                                        <li><a asp-area="" asp-page="/Checkout/Index" class="slide-item"> Checkout</a></li>
+                                    </ul>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">File
+                                            Manager</span><span class="badge bg-pink side-badge">4</span><i
+                                            class="angle fe fe-chevron-right hor-angle"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">File Manager</a></li>
+                                        <li><a asp-area="" asp-page="/FileManager/Index" class="slide-item"> File Manager</a></li>
+                                        <li><a asp-area="" asp-page="/FilemanagerList/Index" class="slide-item"> File Manager List</a></li>
+                                        <li><a asp-area="" asp-page="/FilemanagerDetails/Index" class="slide-item"> File Details</a></li>
+                                        <li><a asp-area="" asp-page="/FileAttachments/Index" class="slide-item"> File Attachments</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sub-category">
+                                    <h3>Misc Pages</h3>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-users"></i><span
+                                            class="side-menu__label">Authentication</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Authentication</a></li>
+                                        <li><a asp-area="" asp-page="/Login/Index" class="slide-item"> Login</a></li>
+                                        <li><a asp-area="" asp-page="/Register/Index" class="slide-item"> Register</a></li>
+                                        <li><a asp-area="" asp-page="/Forgotpassword/Index" class="slide-item"> Forgot Password</a></li>
+                                        <li><a asp-area="" asp-page="/Lockscreen/Index" class="slide-item"> Lock screen</a></li>
+                                        <li class="sub-slide">
+                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span
+                                                    class="sub-side-menu__label">Error Pages</span><i
+                                                    class="sub-angle fe fe-chevron-right"></i></a>
+                                            <ul class="sub-slide-menu">
+                                                <li><a asp-area="" asp-page="/Error400/Index" class="sub-slide-item"> 400</a></li>
+                                                <li><a asp-area="" asp-page="/Error401/Index" class="sub-slide-item"> 401</a></li>
+                                                <li><a asp-area="" asp-page="/Error403/Index" class="sub-slide-item"> 403</a></li>
+                                                <li><a asp-area="" asp-page="/Error404/Index" class="sub-slide-item"> 404</a></li>
+                                                <li><a asp-area="" asp-page="/Error500/Index" class="sub-slide-item"> 500</a></li>
+                                                <li><a asp-area="" asp-page="/Error503/Index" class="sub-slide-item"> 503</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                        <i class="side-menu__icon fe fe-cpu"></i>
+                                        <span class="side-menu__label">Submenu items</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Submenu items</a></li>
+                                        <li><a href="javascript:void(0)" class="slide-item">Submenu-1</a></li>
+                                        <li class="sub-slide">
+                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span
+                                                    class="sub-side-menu__label">Submenu-2</span><i
+                                                    class="sub-angle fe fe-chevron-right"></i></a>
+                                            <ul class="sub-slide-menu">
+                                                <li><a class="sub-slide-item" href="javascript:void(0)">Submenu-2.1</a></li>
+                                                <li><a class="sub-slide-item" href="javascript:void(0)">Submenu-2.2</a></li>
+                                                <li class="sub-slide2">
+                                                    <a class="sub-side-menu__item2" href="javascript:void(0)"
+                                                        data-bs-toggle="sub-slide2"><span
+                                                            class="sub-side-menu__label2">Submenu-2.3</span><i
+                                                            class="sub-angle2 fe fe-chevron-right"></i></a>
+                                                    <ul class="sub-slide-menu2">
+                                                        <li><a href="javascript:void(0)" class="sub-slide-item2">Submenu-2.3.1</a></li>
+                                                        <li><a href="javascript:void(0)" class="sub-slide-item2">Submenu-2.3.2</a></li>
+                                                        <li><a href="javascript:void(0)" class="sub-slide-item2">Submenu-2.3.3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="sub-slide-item" href="javascript:void(0)">Submenu-2.4</a></li>
+                                                <li><a class="sub-slide-item" href="javascript:void(0)">Submenu-2.5</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-category">
+                                    <h3>General</h3>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-map-pin"></i><span
+                                            class="side-menu__label">Maps</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Maps</a></li>
+                                        <li><a asp-area="" asp-page="/Maps1/Index" class="slide-item">Leaflet Maps</a></li>
+                                        <li><a asp-area="" asp-page="/Maps2/Index" class="slide-item">Mapel Maps</a></li>
+                                        <li><a asp-area="" asp-page="/Maps/Index" class="slide-item">Vector Maps</a></li>
+                                    </ul>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-bar-chart-2"></i><span
+                                            class="side-menu__label">Charts</span><span
+                                            class="badge bg-secondary side-badge">6</span><i
+                                            class="angle fe fe-chevron-right hor-angle"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Charts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartChartist/Index" class="slide-item">Chart Js</a></li>
+                                        <li><a asp-area="" asp-page="/ChartFlot/Index" class="slide-item"> Flot Charts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartEchart/Index" class="slide-item"> ECharts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartMorris/Index" class="slide-item"> Morris Charts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartNvd3/Index" class="slide-item"> Nvd3 Charts</a></li>
+                                        <li><a asp-area="" asp-page="/Charts/Index" class="slide-item"> C3 Bar Charts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartLine/Index" class="slide-item"> C3 Line Charts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartDonut/Index" class="slide-item"> C3 Donut Charts</a></li>
+                                        <li><a asp-area="" asp-page="/ChartPie/Index" class="slide-item"> C3 Pie charts</a></li>
+                                    </ul>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                            class="side-menu__icon fe fe-wind"></i><span
+                                            class="side-menu__label">Icons</span><i
+                                            class="angle fe fe-chevron-right"></i></a>
+                                    <ul class="slide-menu">
+                                        <li class="side-menu-label1"><a href="javascript:void(0)">Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons/Index" class="slide-item"> Font Awesome</a></li>
+                                        <li><a asp-area="" asp-page="/Icons2/Index" class="slide-item"> Material Design Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons3/Index" class="slide-item"> Simple Line Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons4/Index" class="slide-item"> Feather Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons5/Index" class="slide-item"> Ionic Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons6/Index" class="slide-item"> Flag Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons7/Index" class="slide-item"> pe7 Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons8/Index" class="slide-item"> Themify Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons9/Index" class="slide-item">Typicons Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons10/Index" class="slide-item">Weather Icons</a></li>
+                                        <li><a asp-area="" asp-page="/Icons11/Index" class="slide-item">Bootstrap Icons</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+                                </svg></div>
+                        </div>
+                    </div>
+                    <!--/APP-SIDEBAR-->
+                </div>  

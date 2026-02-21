@@ -1,0 +1,257 @@
+@page "/Roles"
+@model RolesIndexModel
+@{
+    ViewData["Title"] = "مدیریت نقش‌ها";
+}
+
+<!-- PAGE-HEADER -->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title">مدیریت نقش‌ها</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Management"><i class="fe fe-home"></i> مدیریت</a></li>
+            <li class="breadcrumb-item active" aria-current="page">نقش‌ها</li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newRoleModal">
+            <i class="fe fe-plus"></i> نقش جدید
+        </button>
+    </div>
+</div>
+<!-- PAGE-HEADER END -->
+
+<!-- Success/Error Messages -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        @TempData["Error"]
+    </div>
+}
+
+<!-- Row -->
+<div class="row row-sm">
+    @if (Model.Roles != null && Model.Roles.Count > 0)
+    {
+        @foreach (var role in Model.Roles)
+        {
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card">
+                    <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">@role.RoleName</h5>
+                        <span class="badge @(role.IsActive ? "badge-success" : "badge-danger")">
+                            @(role.IsActive ? "فعال" : "غیرفعال")
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">
+                            @(!string.IsNullOrEmpty(role.Description) ? role.Description : "توضیح ندارد")
+                        </p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="fe fe-users"></i> @role.UserCount کاربر
+                            </small>
+                            <br>
+                            <small class="text-muted">
+                                <i class="fe fe-check-square"></i> @role.PermissionCount دسترسی
+                            </small>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-sm btn-primary" 
+                                onclick="editRole(@role.RoleId)" 
+                                title="ویرایش">
+                            <i class="fe fe-edit"></i> ویرایش
+                        </button>
+                        <button type="button" class="btn btn-sm btn-info" 
+                                onclick="managePermissions(@role.RoleId)" 
+                                title="مدیریت دسترسی‌ها">
+                            <i class="fe fe-lock"></i> دسترسی‌ها
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger" 
+                                onclick="deleteRole(@role.RoleId)" 
+                                title="حذف">
+                            <i class="fe fe-trash-2"></i> حذف
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center py-5">
+                    <i class="fe fe-inbox fs-40 text-muted mb-3"></i>
+                    <p class="text-muted">نقشی یافت نشد</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<!-- Row -->
+
+<!-- New/Edit Role Modal -->
+<div class="modal fade" id="newRoleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">نقش جدید</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="roleForm" method="post" asp-page-handler="SaveRole">
+                <div class="modal-body">
+                    <input type="hidden" id="roleId" name="roleId" value="0">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">نام نقش <span class="text-danger">*</span></label>
+                        <input type="text" id="roleName" name="roleName" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">توضیحات</label>
+                        <textarea id="roleDescription" name="roleDescription" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" id="roleIsActive" name="roleIsActive" class="form-check-input" checked>
+                            <label class="form-check-label" for="roleIsActive">
+                                فعال
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Permissions Modal -->
+<div class="modal fade" id="permissionsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">مدیریت دسترسی‌های نقش</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="permissionsForm" method="post" asp-page-handler="SavePermissions">
+                <div class="modal-body">
+                    <input type="hidden" id="permissionsRoleId" name="roleId" value="0">
+                    
+                    <div id="permissionsLoading" class="text-center py-3">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">در حال بارگیری...</span>
+                        </div>
+                    </div>
+                    <div id="permissionsList" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function editRole(roleId) {
+            // Load role data and show modal
+            fetch(`/api/roles/${roleId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('roleId').value = data.roleId;
+                    document.getElementById('roleName').value = data.roleName;
+                    document.getElementById('roleDescription').value = data.description;
+                    document.getElementById('roleIsActive').checked = data.isActive;
+                    document.querySelector('#newRoleModal .modal-title').innerText = 'ویرایش نقش';
+                    new bootstrap.Modal(document.getElementById('newRoleModal')).show();
+                });
+        }
+
+        function managePermissions(roleId) {
+            document.getElementById('permissionsRoleId').value = roleId;
+            new bootstrap.Modal(document.getElementById('permissionsModal')).show();
+            
+            // Load permissions
+            loadPermissions(roleId);
+        }
+
+        function loadPermissions(roleId) {
+            fetch(`/api/roles/${roleId}/permissions`)
+                .then(response => response.json())
+                .then(data => {
+                    const permissionsList = document.getElementById('permissionsList');
+                    permissionsList.innerHTML = '';
+                    
+                    // Group permissions by category
+                    const grouped = {};
+                    data.forEach(p => {
+                        const cat = p.category || 'سایر';
+                        if (!grouped[cat]) grouped[cat] = [];
+                        grouped[cat].push(p);
+                    });
+                    
+                    Object.keys(grouped).forEach(category => {
+                        const html = `
+                            <h6 class="mt-3 mb-2">${category}</h6>
+                            <div class="permissions-group">
+                                ${grouped[category].map(p => `
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" 
+                                               class="form-check-input permission-check" 
+                                               name="permissions" 
+                                               value="${p.permissionId}" 
+                                               id="perm_${p.permissionId}">
+                                        <label class="form-check-label" for="perm_${p.permissionId}">
+                                            ${p.permissionCode} - ${p.description}
+                                        </label>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `;
+                        permissionsList.insertAdjacentHTML('beforeend', html);
+                    });
+                    
+                    document.getElementById('permissionsLoading').style.display = 'none';
+                    permissionsList.style.display = 'block';
+                });
+        }
+
+        function deleteRole(roleId) {
+            if (confirm('آیا می‌خواهید این نقش را حذف کنید؟')) {
+                fetch(`/api/roles/${roleId}`, {
+                    method: 'DELETE'
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+        document.getElementById('newRoleModal').addEventListener('show.bs.modal', function() {
+            document.getElementById('roleId').value = '0';
+            document.getElementById('roleName').value = '';
+            document.getElementById('roleDescription').value = '';
+            document.getElementById('roleIsActive').checked = true;
+            document.querySelector('#newRoleModal .modal-title').innerText = 'نقش جدید';
+        });
+    </script>
+}
