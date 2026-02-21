@@ -106,7 +106,7 @@
                             @{
                                 int index = 1;
                             }
-                            @foreach (var permission in Model.Permissions.OrderBy(p => p.Category))
+                            @foreach (var permission in (Model.Permissions ?? Enumerable.Empty<PermissionDto>()).OrderBy(p => p.Category))
                             {
                                 <tr>
                                     <td><span class="badge badge-secondary">@index</span></td>
